@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <style>
+
+        body{
+            background-color: rgb(207, 223, 241);
+        }
+        .product-card{
+            background-color: white;
+            width: 250px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px;
+            display: block;
+            margin: 30px auto;
+            padding: 3px;
+        }
+        .iphone-img{
+            height: 100px;
+            display: block;
+            margin: 5px auto;
+            justify-content: center;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+        }
+        .product-title{
+            font-size: 16px;
+           
+        }
+        .card-body{
+            margin-left: 7px;
+        }
+        .product-dis{
+            font-size: 14px;
+            
+        }
+        .price{
+            font-weight: bold;
+            font-size: 20px;
+           
+        }
+        .btn{
+             background-color: #0093E9;
+             background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+             border: none;
+             border-radius: 20px;
+             padding: 5px 20px;
+             display: block;
+             margin: 10px auto;
+        }
+        .qnty{
+            height: 25px;
+        }
+        .qnty-btn-con{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .text{
+            font-size: 25px;
+            margin: auto 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <img src="iphone.png" class="iphone-img"/>
+
+        <div class="card-body">
+       <h1 class="product-title">Apple iPhone 14 Pro Max</h1>
+       <p class="product-dis">
+        Apple iPhone 14 Pro Max (Deep Purple, 128 GB)
+       </p>
+       <p class="price">
+        ₹ 1,27,999/-
+       </p>
+
+       <p id="show-qnty">1 x 1,27,999</p>
+       <p id="show-total">Total: 1,27,999</p>
+
+       <div class="qnty-btn-con">
+         <img src="minus.png" class="qnty" onclick="dec()"/>
+
+         <span class="text" id="qnty-text">1</span>
+
+         <img src="plus.png"class="qnty" onclick="inc()"/>
+
+       </div>
+       <button type="button" class="btn">
+        Buy Now
+       </button>
+       </div>
+    </div>
+
+    <script>
+      function inc(){
+           const quantityText = document.getElementById('qnty-text');
+            const showQuantity = document.getElementById("show-qnty");
+            const showTotal = document.getElementById("show-total");
+
+            let quantity = parseInt(quantityText.innerText);
+            
+            if(quantity<10)
+            {
+            quantityText.innerText = ++quantity;
+            } 
+            else{
+                alert("You can't add more than 10 items");
+            }
+            showQuantity.innerText = `${quantity}  X 1,27,999`;
+            showTotal.innerText = `Total : ${quantity * 1,27,999}`;
+      }
+      function dec(){
+
+            const quantityText = document.getElementById('qnty-text');
+            const showQuantity = document.getElementById("show-qnty");
+            const showTotal = document.getElementById("show-total");
+
+             let quantity = parseInt(quantityText.innerText);
+
+             if(quantity > 1)
+             {
+             quantityText.innerText = --quantity;}
+            else
+            {
+                alert("You can't add less than 1 items");
+            }
+            showQuantity.innerText = `${quantity}  X 1,27,999`;
+            showTotal.innerText = `Total : ${quantity * 1,27,999}`;
+            
+        }
+    </script>
+</body>
+</html>
