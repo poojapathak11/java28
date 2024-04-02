@@ -101,7 +101,7 @@
 
     <script>
       function inc(){
-           const quantityText = document.getElementById('qnty-text');
+            const quantityText = document.getElementById('qnty-text');
             const showQuantity = document.getElementById("show-qnty");
             const showTotal = document.getElementById("show-total");
 
@@ -115,7 +115,7 @@
                 alert("You can't add more than 10 items");
             }
             showQuantity.innerText = `${quantity}  X 1,27,999`;
-            showTotal.innerText = `Total : ${quantity * 1,27,999}`;
+            showTotal.innerText = `Total : ${quantity * 127999}`
       }
       function dec(){
 
@@ -133,7 +133,7 @@
                 alert("You can't add less than 1 items");
             }
             showQuantity.innerText = `${quantity}  X 1,27,999`;
-            showTotal.innerText = `Total : ${quantity * 1,27,999}`;
+            showTotal.innerText = `Total : ${quantity * 127999}`
             
         }
     </script>
